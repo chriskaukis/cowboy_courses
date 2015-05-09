@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h2>Log Into Cowboy Courses</h2>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for(@session, url: { action: 'create' }, html: { class: 'form', role: 'form' }) do |f| %>
+      <%= f.hidden_field :return_url %>
+      <%= render partial: 'shared/errors', locals: { model: @session } %>
+      <div class="form-group">
+        <%= f.label :email, class: 'sr-only' %>
+        <%= f.text_field :email, placeholder: 'Email', class: 'form-control input-lg' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password, class: 'sr-only' %>
+        <%= f.password_field :password, placeholder: 'Password', class: 'form-control input-lg' %>
+      </div>
+      <div class="checkbox">
+        <%= f.label :remember do %>
+          <%= f.check_box :remember %> Keep me logged in.
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= f.button(type: 'submit', class: 'btn btn-primary btn-lg') do %>
+          Log In
+        <% end %>
+        or <%= link_to 'Sign up for Cowboy Courses.', sign_up_path %>
+      </div>
+    <% end %>
+    <p><%= link_to 'Forgot your password?', '#' %></p>
+  </div>
+</div>

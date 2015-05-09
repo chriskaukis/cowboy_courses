@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h2>Sign Up For Cowboy Courses</h2>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for(@user, url: { action: 'create' }, html: { class: 'form', role: 'form' }) do |f| %>
+
+      <%= render partial: 'shared/errors', locals: { model: @user } %>
+
+      <div class="form-group">
+        <%= f.label :name, class: 'sr-only' %>
+        <%= f.text_field :name, placeholder: 'Name', class: 'form-control input-lg' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email, class: 'sr-only' %>
+        <%= f.text_field :email, placeholder: 'Email', class: 'form-control input-lg' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, class: 'sr-only' %>
+        <%= f.password_field :password, placeholder: 'Password', class: 'form-control input-lg' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.button(type: 'submit', class: 'btn btn-primary btn-lg') do %>
+          Sign Up
+        <% end %>
+        or <%= link_to 'Log in to an existing account.', log_in_path %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,7 +1,7 @@
-class Login
+class Session
   include ActiveModel::Model
 
-  attr_accessor :email, :password
+  attr_accessor :email, :password, :return_url, :remember
 
   validates :email, presence: true
   validates :password, presence: true
@@ -15,7 +15,12 @@ class Login
     end
   end
 
+  def remember?
+    return true if remember.to_i == 1
+    return false
+  end
+
   def persisted?
-    false
+    return false
   end
 end
