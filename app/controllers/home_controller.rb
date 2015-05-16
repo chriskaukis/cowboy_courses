@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
   def index
-    # Do something grand.
+    # TODO: Something grand.
+  end
+
+  def contact
+    # TODO: Contact form model.
   end
 end
