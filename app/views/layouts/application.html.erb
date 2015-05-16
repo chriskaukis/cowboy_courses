@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Third party Oklahoma State course catalog.">
+    <meta name="description" content="Browse Oklahoma State University course catalog.">
     <meta name="author" content="Spike Spiegal">
     <title>Cowboy Courses</title>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -27,15 +27,24 @@
         <div id="navbar" class="collapse navbar-collapse">
           <% unless logged_in? %>
             <ul class="nav navbar-nav">
-              <li><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
+              <li><%= link_to 'Log In', login_path %></li>
+              <li><%= link_to 'Sign Up', signup_path %></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           <% else %>
             <ul class="nav navbar-nav">
               <li><a href="#courses">Courses</a></li>
               <li><a href="#subscriptions">Subscriptions</a></li>
-              <li><a href="#settings">Welcome, <%= current_user.name %></a></li>
+
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, <%= current_user.name %> <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Foo</a></li>
+                    <li><a href="#">Bar</a></li>
+                    <li class="divider"></li>
+                    <li><%= link_to 'Log Out', logout_path %></li>
+                  </ul>
+                </li>
             </ul>
           <% end %>
         </div>
@@ -43,10 +52,18 @@
     </nav>
 
     <div class="container">
+      <% unless flash.empty? %>
+        <% flash.each do |k, v| %>
+          <div class="alert alert-<%= k %>" role="alert">
+            <%= v %>
+          </div>
+        <% end %>
+      <% end %>
+
       <%= yield %>
     </div>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>
 
