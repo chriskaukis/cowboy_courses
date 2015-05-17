@@ -9,8 +9,8 @@ class Session
   def authenticate!
     if valid?
       user = User.find_by(email: email).try(:authenticate, password)
-      return user if !user.nil? && user.activated?
-      if user.nil?
+      return user if user && user.activated?
+      if !user
         errors.add(:base, 'Invalid username and/or password.')
       elsif !user.activated?
         errors.add(:base, 'Account not activated! Check your email to activate your account.')

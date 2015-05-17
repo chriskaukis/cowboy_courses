@@ -14,6 +14,7 @@
       <div class="form-group">
         <%= f.label :password, class: 'sr-only' %>
         <%= f.password_field :password, placeholder: 'Password', class: 'form-control input-lg' %>
+        <span class="help-block"><%= link_to 'Forgot password?', new_password_reset_path %></span>
       </div>
       <div class="checkbox">
         <%= f.label :remember do %>
@@ -27,6 +28,5 @@
         or <%= link_to 'Sign up for Cowboy Courses.', signup_path %>
       </div>
     <% end %>
-    <p><%= link_to 'Forgot your password?', '#' %></p>
   </div>
 </div>

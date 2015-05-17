@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   root 'home#index'
 
   get 'login' => 'sessions#new', as: :login
@@ -9,7 +13,10 @@ Rails.application.routes.draw do
   post 'signup' => 'users#create'
   get 'contact' => 'home#contact', as: :contact
   post 'contact' => 'home#contact'
+
   get 'activate/:token' => 'users#activate', as: :activate
+
+  resources :password_resets
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

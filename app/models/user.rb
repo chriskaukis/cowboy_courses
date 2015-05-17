@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :name, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, unless: Proc.new { |r| r.password.blank? }
 
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :password_reset_token
 
   before_create :create_activation_digest
   before_save :downcase_email
@@ -37,6 +37,21 @@ class User < ActiveRecord::Base
 
   def forget!
     update_attribute(:remember_digest, nil)
+  end
+
+  def create_password_reset_digest
+    self.password_reset_token = User.generate_token
+    self.password_reset_digest = User.digest(self.password_reset_token)
+    self.password_reset_sent_at = Time.zone.now
+    save
+  end
+
+  def is_valid_password_reset_token?(token)
+    BCrypt::Password.new(password_reset_digest).is_password?(token)
+  end
+
+  def password_reset_expired?
+    password_reset_sent_at < 1.day.ago
   end
 
   protected

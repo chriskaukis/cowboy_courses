@@ -7,7 +7,7 @@
     <meta name="description" content="Browse Oklahoma State University course catalog.">
     <meta name="author" content="Spike Spiegal">
     <title>Cowboy Courses</title>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -63,7 +63,6 @@
       <%= yield %>
     </div>
 
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>
-

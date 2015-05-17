@@ -1,0 +1,27 @@
+<div class="page-header">
+  <h2>Password Reset Request</h2>
+  <small>
+    If you forgot your password we will send you an email with instructions
+    to reset it. You only need to let us know your email address.
+  </small>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for(@password_reset_request, url: password_resets_path, html: { class: 'form', role: 'form' }) do |f| %>
+
+      <%= render partial: 'shared/errors', locals: { model: @password_reset_request } %>
+
+      <div class="form-group">
+        <%= f.label :email, class: 'sr-only' %>
+        <%= f.text_field :email, placeholder: 'Email', class: 'form-control input-lg' %>
+      </div>
+      <div class="form-group">
+        <%= f.button(type: 'submit', class: 'btn btn-primary btn-lg') do %>
+          Send
+        <% end %>
+        or <%= link_to 'Sign up for Cowboy Courses.', signup_path %>
+      </div>
+    <% end %>
+  </div>
+</div>
