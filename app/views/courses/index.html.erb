@@ -1,0 +1,56 @@
+<% title 'Courses' %>
+
+<div class="page-header">
+<h2>Courses</h2>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <%= paginate(@courses) %>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+            Sections
+          <th>
+            Seats
+          </th>
+          <th>
+            Comments
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @courses.each do |c| %>
+          <tr>
+            <td>
+              <%= 'Coming soon!' %>
+            </td>
+            <td>
+              <%= link_to c.name, course_path(c) %>
+            </td>
+            <td>
+              <%= 'Coming soon!' %>
+            </td>
+            <td>
+              <%= 'Coming soon!' %>
+            </td>
+            <td>
+              <%= 'Coming soon!' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate(@courses) %>
+
+  </div>
+</div>

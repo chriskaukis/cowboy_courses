@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Browse Oklahoma State University course catalog.">
     <meta name="author" content="Spike Spiegal">
-    <title>Cowboy Courses</title>
+    <title>
+      Cowboy Courses
+      <%= yield :title %>
+    </title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -22,7 +25,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Cowboy Courses</a>
+          <%= link_to 'Cowboy Courses', root_path, class: 'navbar-brand' %>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <% unless logged_in? %>
@@ -33,8 +36,8 @@
             </ul>
           <% else %>
             <ul class="nav navbar-nav">
-              <li><a href="#courses">Courses</a></li>
-              <li><a href="#subscriptions">Subscriptions</a></li>
+              <li><a href="<%= courses_path %>">Courses</a></li>
+              <li><a href="<%= subscriptions_path %>">Subscriptions (<%= current_user.subscriptions.count %>)</a></li>
 
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, <%= current_user.name %> <span class="caret"></span></a>

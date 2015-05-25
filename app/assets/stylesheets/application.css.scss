@@ -12,9 +12,11 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 body {
-  padding-top: 60px;
+  padding-top: 70px;
 }
 
 #error_explanation {
@@ -30,4 +32,9 @@ body {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+button.copy-to-clipboard {
+  border: 0;
+  background-color: #fff;
 }

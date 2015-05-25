@@ -13,9 +13,11 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'coffee-rails', github: "rails/coffee-rails"
 
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'font-awesome-sass', '~> 4.3.0'
+gem 'zeroclipboard-rails'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -28,6 +30,23 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 gem 'unicorn'
+
+# Needed for scraping.
+gem 'mechanize'
+
+gem 'kaminari'
+
+# If we want to use Resque.
+# gem 'resque'
+# gem 'resque-scheduler'
+
+# If we want to use DelayedJob.
+# In config/application.rb: config.active_job.queue_adapter = :delayed_job
+# rails generate delayed_job:active_record
+gem 'delayed_job_active_record'
+
+# To run delayed jobs as daemon(s).
+gem 'daemons'
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development

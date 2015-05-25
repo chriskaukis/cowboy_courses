@@ -1,0 +1,76 @@
+<% title @course.name %>
+
+<div class="page-header">
+  <h2>
+    <%= @course.name %>
+  </h2>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+            Status
+          </th>
+          <th>
+            Instructor(s)
+          <th>
+            Seats
+          </th>
+          <th>
+            Call #
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @course.sections.each do |s| %>
+          <tr>
+            <td>
+              <% if current_user.subscribed_to?(s) %>
+                <%= link_to section_unsubscribe_path(s) do %>
+                  <%= icon('star') %>
+                <% end %>
+              <% else %>
+                <%= link_to section_subscribe_path(s) do %>
+                  <%= icon('star-o') %>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <%= s.name %>
+            </td>
+            <td>
+              <%= s.status %>
+            </td>
+            <td>
+              <%= s.instructors.join(', ') %>
+            </td>
+            <td>
+              <% if !s.open_seats.nil? && !s.total_seats.nil? %>
+                <%= s.open_seats %> / <%= s.total_seats %>
+              <% elsif !s.open_seats.nil? %>
+                <%= s.open_seats %>
+              <% elsif !s.total_seats.nil? %>
+                <%= s.total_seats %>
+              <% else %>
+                <%= icon('question') %>
+              <% end %>
+            </td>
+            <td>
+              <span id="call_number_<%=s.call_number %>"><%= s.call_number %></span>
+              <button data-clipboard-text="<%=s.call_number %>" aria-label="Copy to clipboard" class="copy-to-clipboard" data-copied-hint="Copied!" type="button"><span class="fa fa-clipboard"></span></button>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

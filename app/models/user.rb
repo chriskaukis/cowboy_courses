@@ -1,5 +1,11 @@
 class User < ActiveRecord::Base
   has_secure_password
+
+  has_many :subscriptions
+  has_many :sections, :through => :subscriptions
+  has_many :comments
+  has_many :votes
+
   validates :name, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }, unless: Proc.new { |r| r.password.blank? }
@@ -52,6 +58,31 @@ class User < ActiveRecord::Base
 
   def password_reset_expired?
     password_reset_sent_at < 1.day.ago
+  end
+
+  def subscribed_to?(section)
+    @cached_section_ids ||= section_ids
+    @cached_section_ids.include?(section.id)    
+  end
+  
+  def up_voted?(voteable)
+    if voteable.is_a?(Course)
+      @up_voted_course_ids ||= ActiveRecord::Base.connection.select_values("SELECT voteable_id FROM votes WHERE voteable_type = 'Course' AND user_id = #{id} AND points > 0")
+      return @up_voted_course_ids.include?(voteable.id.to_s)
+    elsif voteable.is_a?(Instructor)
+      @up_voted_instructor_ids ||= ActiveRecord::Base.connection.select_values("SELECT voteable_id FROM votes WHERE voteable_type = 'Instructor' AND user_id = #{id} AND points > 0")
+      return @up_voted_instructor_ids.include?(voteable.id.to_s)
+    end
+  end
+  
+  def down_voted?(voteable)
+    if voteable.is_a?(Course)
+      @down_voted_course_ids ||= ActiveRecord::Base.connection.select_values("SELECT voteable_id FROM votes WHERE voteable_type = 'Course' AND user_id = #{id} AND points < 0")
+      @down_voted_course_ids.include?(voteable.id.to_s)
+    elsif voteable.is_a?(Instructor)
+      @down_voted_instructor_ids ||= ActiveRecord::Base.connection.select_values("SELECT voteable_id FROM votes WHERE voteable_type = 'Instructor' AND user_id = #{id} AND points < 0")
+      @down_voted_instructor_ids.include?(voteable.id.to_s)
+    end
   end
 
   protected

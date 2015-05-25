@@ -17,6 +17,28 @@ Rails.application.routes.draw do
   get 'activate/:token' => 'users#activate', as: :activate
 
   resources :password_resets
+  resources :subscriptions, :only => [:index]  
+  resources :subjects
+  
+  resources :instructors do
+    resources :comments, :except => [:index], :controller => 'instructors_comments'
+    resources :votes, :only => [:up, :down]
+    get 'up', :controller => 'instructors_votes', :action => 'up'
+    get 'down', :controller => 'instructors_votes', :action => 'down'
+  end
+  
+  resources :courses do
+    resources :comments, :except => [:index], :controller => 'courses_comments'
+    resources :votes, :only => [:up, :down]
+    get 'up', :controller => 'courses_votes', :action => 'up'
+    get 'down', :controller => 'courses_votes', :action => 'down'
+  end
+  
+  resources :sections do
+    resources :subscriptions, :only => [:create, :destroy]
+    get 'subscribe', :controller => 'subscriptions', :action => 'create'
+    get 'unsubscribe', :controller => 'subscriptions', :action => 'destroy'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

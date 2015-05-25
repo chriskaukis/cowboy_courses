@@ -42,4 +42,20 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def require_user
+    unless logged_in?
+      flash[:notice] = 'You must be logged in to access that page.'
+      redirect_to login_url, return_url: request.original_url
+      return false
+    end
+  end
+  
+  def require_not_logged_in
+    if logged_in?
+      flash[:notice] = 'You are already logged in.'
+      redirect_to root_url
+      return false
+    end
+  end
 end

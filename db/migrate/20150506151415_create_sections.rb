@@ -9,6 +9,7 @@ class CreateSections < ActiveRecord::Migration
       t.integer :open_seats
       t.integer :total_seats
       t.references :course, index: true
+      t.references :term, index: true
       t.string :identifier
       t.index :identifier
       t.string :days

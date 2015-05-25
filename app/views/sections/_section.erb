@@ -1,0 +1,31 @@
+<tr id="section_<%= section.id %>">
+  <td class="subscribe">
+    <% if current_user.subscribed_to?(section) %>
+      <%= link_to 'unsubscribe', section_unsubscribe_path(section, :redirect_to => current_url), :class => 'unsubscribe' %>
+    <% else %>
+      <%= link_to 'subscribe', section_subscribe_path(section, :redirect_to => current_url), :class => 'subscribe' %>
+    <% end %>
+  </td>
+  <td class="section_name">
+    <%= section.name %>
+  </td>
+  <td class="call_number">
+    <%= section.call_number %>
+  </td>
+  <td class="instructor_name">
+    <% if section.instructor.nil? %>
+      unknown
+    <% else %>
+      <%= link_to(section.instructor.name, instructor_path(section.instructor), :title => section.instructor.name) %>
+    <% end %>
+  </td>
+  <td class="status">
+    <%= section.status || 'unknown' %>
+  </td>
+  <td class="open_seats">
+    <%= section.open_seats || 'unknown' %>
+  </td>
+  <td class="total_seats">
+    <%= section.total_seats || 'unknown' %>
+  </td>
+</tr>

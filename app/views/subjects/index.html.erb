@@ -1,0 +1,32 @@
+<% title 'subjects' %>
+
+<% content_for :right do %>
+  <td id="right">
+    <div class="block summary">
+      <h2><%= @subjects.size %></h2>
+      <p>subjects for the</p>
+      <%= link_to @term.name, subjects_path(:term_id => @term), :title => @term.name, :class => 'tag' %>
+      <p>term</p>
+    </div>
+
+    <% if @terms.size > 1 %>
+    <div class="block" id="subjects_block">
+      <h3>Active Terms</h3>
+      <% @terms.each do |term| %>
+        <%= link_to term.name, subjects_path(:term_id => term), :title => term.name, :class => 'tag' %>
+      <% end %>
+    </div>
+    <% end %>
+  </td>
+<% end %>
+
+<div class="page_title">
+  <h2>Subjects</h2>
+  <p>All subjects followed by the number of courses.</p>
+</div>
+
+<ul class="subjects">
+<% @subjects.each do |subject| %>
+  <li><%= link_to subject.identifier, subject_path(subject), :title => subject.name %> x <%= subject.courses_count %></li>
+<% end %>
+</ul>
