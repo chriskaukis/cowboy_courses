@@ -9,23 +9,22 @@
 <div class="row">
   <div class="col-md-12">
 
-    <table class="table">
+    <table class="table table-sections">
       <thead>
         <tr>
-          <th>
-          </th>
-          <th>
+          <th class="subscription"></th>
+          <th class="name">
             Name
           </th>
-          <th>
+          <th class="status">
             Status
           </th>
-          <th>
+          <th class="instructors">
             Instructor(s)
-          <th>
+          <th class="text-center seats">
             Seats
           </th>
-          <th>
+          <th class="text-right call-number">
             Call #
           </th>
         </tr>
@@ -33,7 +32,7 @@
       <tbody>
         <% @course.sections.each do |s| %>
           <tr>
-            <td>
+            <td class="subscription">
               <% if current_user.subscribed_to?(s) %>
                 <%= link_to section_unsubscribe_path(s) do %>
                   <%= icon('star') %>
@@ -44,16 +43,16 @@
                 <% end %>
               <% end %>
             </td>
-            <td>
+            <td class="name">
               <%= s.name %>
             </td>
-            <td>
-              <%= s.status %>
-            </td>
-            <td>
+            <td class="instructors">
               <%= s.instructors.join(', ') %>
             </td>
-            <td>
+            <td class="status">
+              <%= s.status %>
+            </td>
+            <td class="text-center seats">
               <% if !s.open_seats.nil? && !s.total_seats.nil? %>
                 <%= s.open_seats %> / <%= s.total_seats %>
               <% elsif !s.open_seats.nil? %>
@@ -64,7 +63,7 @@
                 <%= icon('question') %>
               <% end %>
             </td>
-            <td>
+            <td class="text-right call-number">
               <span id="call_number_<%=s.call_number %>"><%= s.call_number %></span>
               <button data-clipboard-text="<%=s.call_number %>" aria-label="Copy to clipboard" class="copy-to-clipboard" data-copied-hint="Copied!" type="button"><span class="fa fa-clipboard"></span></button>
             </td>

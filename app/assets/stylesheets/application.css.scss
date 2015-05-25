@@ -38,3 +38,9 @@ button.copy-to-clipboard {
   border: 0;
   background-color: #fff;
 }
+
+table.table-sections th.subscription,
+table.table-sections td.subscription {
+  width: 32px;
+  text-align: left;
+}

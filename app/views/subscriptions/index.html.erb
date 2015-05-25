@@ -5,20 +5,61 @@
 </div>
 
 <div class="row">
-  <div class="row">
-    <table class="table">
+  <div class="col-md-12">
+    <table class="table table-sections">
       <thead>
-
+        <tr>
+          <th class="subscription"></th>
+          <th class="name">
+            Name
+          </th>
+          <th class="instructors">
+            Instructors
+          </th>
+          <th class="status">
+            Status
+          </th>
+          <th class="seats text-center">
+            Seats
+          </th>
+          <th class="call-number text-right">
+            Call #
+          </th>
+        </tr>
       </thead>
       <tbody>
         <% @subscriptions.each do |s| %>
-
           <tr>
             <td>
-
+              <%= link_to section_unsubscribe_path(s.section) do %>
+                <%= icon('star') %>
+              <% end %>
             </td>
-          </tr>
-          
+            <td>
+              <%= s.section.name %>
+            </td>
+            <td>
+              <%= s.section.instructors.join(', ') %>
+            </td>
+            <td>
+              <%= s.section.status %>
+            </td>
+            <td class="text-center">
+              <% if !s.section.open_seats.nil? && !s.section.total_seats.nil? %>
+                <%= s.section.open_seats %> / <%= s.section.total_seats %>
+              <% elsif !s.section.open_seats.nil? %>
+                <%= s.section.open_seats %>
+              <% elsif !s.section.total_seats.nil? %>
+                <%= s.section.total_seats %>
+              <% else %>
+                <%= icon('question') %>
+              <% end %>
+            </td>
+            <td class="text-right">
+              <span id="call_number_<%=s.section.call_number %>"><%= s.section.call_number %></span>
+              <button data-clipboard-text="<%=s.section.call_number %>" aria-label="Copy to clipboard" class="copy-to-clipboard" data-copied-hint="Copied!" type="button"><span class="fa fa-clipboard"></span></button>
+            </td>
+          </tr>          
         <% end %>
       </tbody>
     </table>
