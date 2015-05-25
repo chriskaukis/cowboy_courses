@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
   before_action :require_user
 
   def index
-    @courses = Course.order(:name).page(params[:page]).per(50)
+    @courses = CourseSummary.includes(:term).order(:name).page(params[:page]).per(50)
   end
 
   def show

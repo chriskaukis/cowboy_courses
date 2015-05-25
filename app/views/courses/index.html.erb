@@ -9,41 +9,36 @@
 
     <%= paginate(@courses) %>
 
-    <table class="table">
+    <table class="table table-courses">
       <thead>
         <tr>
-          <th>
-          </th>
-          <th>
+          <th class="name">
             Name
           </th>
-          <th>
-            Sections
-          <th>
-            Seats
+          <th class="term">
+            Term
           </th>
-          <th>
-            Comments
+          <th class="sections">
+            Sections
+          <th class="seats">
+            Seats
           </th>
         </tr>
       </thead>
       <tbody>
         <% @courses.each do |c| %>
           <tr>
-            <td>
-              <%= 'Coming soon!' %>
-            </td>
-            <td>
+            <td class="name">
               <%= link_to c.name, course_path(c) %>
             </td>
-            <td>
-              <%= 'Coming soon!' %>
+            <td class="term">
+              <%= c.term.name %>
             </td>
-            <td>
-              <%= 'Coming soon!' %>
+            <td class="sections">
+              <%= c.sections_count %>
             </td>
-            <td>
-              <%= 'Coming soon!' %>
+            <td class="seats">
+              <%= c.open_seats %> / <%= c.total_seats %>
             </td>
           </tr>
         <% end %>

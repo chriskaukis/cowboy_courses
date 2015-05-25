@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525042619) do
+ActiveRecord::Schema.define(version: 20150525054423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,15 +74,6 @@ ActiveRecord::Schema.define(version: 20150525042619) do
     t.integer "section_id",    null: false
     t.index ["instructor_id", "section_id"], name: "index_instructors_sections_on_instructor_id_and_section_id", using: :btree
     t.index ["section_id", "instructor_id"], name: "index_instructors_sections_on_section_id_and_instructor_id", using: :btree
-  end
-
-  create_table "logged_actions", id: :bigserial, force: :cascade do |t|
-    t.text    "table_name",     null: false
-    t.text    "action",         null: false
-    t.hstore  "row_data"
-    t.hstore  "changed_fields"
-    t.boolean "statement_only", null: false
-    t.index ["action"], name: "logged_actions_action_idx", using: :btree
   end
 
   create_table "sections", force: :cascade do |t|
