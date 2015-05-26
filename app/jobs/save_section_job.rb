@@ -50,6 +50,11 @@ class SaveSectionJob
               i.sections << s
             end
           end
+
+          # Check for changes and queue job to notify user.
+          if record.status_changed? && (record.status_was('cancelled') || record.status_was('closed')) && record.status.eql?('open')
+            Delayed::Job.enqueue(SectionStatusChangedJob.new(record))
+          end
         end
         record.save!
       rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotSaved

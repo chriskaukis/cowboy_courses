@@ -48,6 +48,8 @@ gem 'delayed_job_active_record'
 # To run delayed jobs as daemon(s).
 gem 'daemons'
 
+gem 'twilio-ruby'
+
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
 
