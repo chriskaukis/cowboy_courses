@@ -53,6 +53,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+set :delayed_job_args, '-n 10'
 set :unicorn_config_path, 'config/unicorn.rb'
 
 namespace :deploy do
@@ -61,6 +62,7 @@ namespace :deploy do
   namespace :deploy do
     task :restart do
       invoke 'unicorn:restart'
+      invoke 'delayed_job:restart'
     end
   end
 
