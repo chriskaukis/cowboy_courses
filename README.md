@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## README
 
 This README would normally document whatever steps are necessary to get the
@@ -23,6 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-=======
-# cowboy_courses
->>>>>>> 60cdc57566ecb3e4eae1c98d14a698e97e024651
