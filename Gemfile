@@ -54,6 +54,7 @@ gem 'twilio-ruby'
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
+  gem 'capistrano-rbenv-vars'
   # gem 'capistrano-rvm'
 end
 
