@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: cowboy_courses_production
-  username: cowboy_courses
+  username: appuser
   password: <%= ENV['COWBOY_COURSES_DATABASE_PASSWORD'] %>

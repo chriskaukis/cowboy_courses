@@ -46,11 +46,11 @@
             <td class="name">
               <%= s.name %>
             </td>
-            <td class="instructors">
-              <%= s.instructors.join(', ') %>
-            </td>
             <td class="status">
               <%= s.status %>
+            </td>
+            <td class="instructors">
+              <%= s.instructors.join(', ') %>
             </td>
             <td class="text-center seats">
               <% if !s.open_seats.nil? && !s.total_seats.nil? %>
