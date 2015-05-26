@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem 'rails', github: "rails/rails"
 gem 'arel', github: "rails/arel"
 
@@ -54,7 +56,6 @@ gem 'twilio-ruby'
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
-  gem 'capistrano-rbenv-vars'
   # gem 'capistrano-rvm'
 end
 
