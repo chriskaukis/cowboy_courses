@@ -225,15 +225,17 @@ module CowboyCoursesScraper
               days = $1.gsub(/\s+/, '')
             end
           elsif td['headers'] == 'Instructor'
-            # TODO: Handle multiple instructors.
-            # Some sections list multiple instructors.
-            # The problem is finding an example.
-            if td.text =~ /([a-z]+[ -_a-z]*[a-z]*)/im
-              instructor = $1.strip
-              if !instructor.nil? && !instructor.empty?
-                instructors << instructor
-              end
+            td.search('br').each do |n|
+              n.replace("\n")
             end
+            instructors += td.text.split("\n").map { |n| n.strip }
+
+            # if td.text =~ /([a-z]+[ -_a-z]*[a-z]*)/im
+            #   instructor = $1.strip
+            #   if !instructor.nil? && !instructor.empty?
+            #     instructors << instructor
+            #   end
+            # end
           end
           # TODO: Start and end dates
           # TODO: Credits
