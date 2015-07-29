@@ -1,0 +1,49 @@
+<% title 'search' %>
+
+<div class="page_title">
+  <h2>
+    Search
+  </h2>
+  <p>
+    <strong><%= @search.total_entries %></strong> results found<%= " for #{@q}" unless @q.blank? %>.
+  </p>
+</div>
+
+<table class="list search">  
+  <thead>
+    <tr>
+      <td colspan="5">
+        <%= will_paginate @search %>
+      </td>
+    </tr>
+  </thead>
+  <% if @search.size > 0 %>
+
+    <% if @search.total_pages > 1 %>
+    <tfoot>
+      <tr>
+        <td colspan="5">          
+          <%= will_paginate @search %>          
+        </td>
+      </tr>
+    </tfoot>
+    <% end %>
+
+  <tbody>
+    <% @search.each do |course| %>
+      <tr>
+        <td>
+          <%= link_to course.name, course_path(course), :title => course.name %>
+        </td>
+    <% end %>
+  </tbody>
+  <% else %>
+  <tbody>
+    <tr>
+      <td colspan="5">
+      <p>Nope, sorry, nothing here.</p>
+      </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>

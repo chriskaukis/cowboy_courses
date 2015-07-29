@@ -1,0 +1,879 @@
+/* css reset
+ * http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+ * The one and original. Pasted raw!
+ */
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, font, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-weight: inherit;
+   font-style: inherit;
+   font-size: 100%;
+   font-family: inherit;
+   vertical-align: baseline;
+ }
+ /* remember to define focus styles! */
+ :focus {
+   outline: 0;
+ }
+ body {
+   line-height: 1;
+   color: black;
+   background: white;
+ }
+ ol, ul {
+   list-style: none;
+ }
+ /* tables still need 'cellspacing="0"' in the markup */
+ table {
+   border-collapse: separate;
+   border-spacing: 0;
+ }
+ caption, th, td {
+   text-align: left;
+   font-weight: normal;
+ }
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+   content: "";
+ }
+ blockquote, q {
+   quotes: "" "";
+ }
+
+body, input, select, textarea, td, th {
+  font-family: 'Lucida Grande', 'Trebuchet MS', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #333;
+}
+
+body {
+  background-color: #eee;
+}
+
+p {
+  line-height: 1.6;
+  color: #444;
+  margin: 1.0em 0;
+}
+
+p.signed {
+  margin: 2.0em 0;
+  font-style: italic;
+  color: #666;
+}
+
+a {
+  color: #f60;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Times, "Times New Roman", Georgia;
+  font-weight: bold;
+  color: #666;
+}
+
+strong {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 54px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+legend {
+  margin-bottom: 10px;
+}
+
+textarea {
+  padding: 5px;
+}
+
+/* layout */
+div#header {
+  padding: 7px 10px;
+  position: relative;
+  background-color: #fff;
+  border-bottom: #f60 3px solid;
+  color: #ccc;
+}
+
+div#header h1 {
+  line-height: 16px;
+  font-size: 16px;
+  background-position: 0 center;
+  background-repeat: no-repeat;
+}
+
+div#header h1 a, div#header h1 a:hover {
+  color: #f60;
+  text-decoration: none;
+}
+
+div#main_menu {
+  position: absolute;
+  bottom: 10px;
+  left: 85px;
+}
+
+/* make the main menu normal links */
+div#main_menu {
+  position: absolute;
+  right: 10px;
+  font-size: 11px;
+}
+
+/* make the main menu tabs */
+/*
+div#main_menu a:hover {
+  text-decoration: none;
+}
+
+div#main_menu a {
+  margin: 0 2px 0 0;
+  color: #fff;
+  padding: 4px 7px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #f60;
+  border: 1px solid #f60;
+  border-bottom-color: transparent;
+  font-size: 11px;
+}
+*/
+
+div#login_menu {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 11px;
+}
+
+div#logged_in_menu {
+  position: absolute;
+  bottom: 4px;
+  right: 10px;
+  font-size: 11px;
+}
+
+div#content {
+  margin: 20px;
+}
+
+table#layout {
+  width: 100%;
+}
+
+td#right {
+  width: 200px;
+  vertical-align: top;
+  padding: 0 20px;
+}
+
+td#main {
+  vertical-align: top;
+  padding: 0 20px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 3px solid #f60;
+}
+
+div#footer {
+  border-top: 3px solid #ccc;
+  background-color: #fff;
+  color: #666;
+  padding: 15px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+div#flash_notice {
+  margin: 20px;
+  padding: 10px 15px;
+  color: #666;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+label {
+  color: #666;
+}
+
+select.subjects {
+  width: 165px;
+}
+
+select.terms {
+  width: 120px;
+}
+
+form.filter {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+form.filter input.q {
+  font-size: 10px;
+  border: 1px solid #ccc;
+  padding: 3px;
+  margin: 0 3px;
+}
+
+input.text {
+  margin: 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  width: 200px;
+  font-size: 18px;
+  color: #666;
+}
+
+input.text.openid {
+  width: 400px;
+  padding-left: 33px;
+  background-image: url(../images/openid.gif);
+  background-position: 10px center;
+  background-repeat: no-repeat;
+}
+
+input.text.email {
+  width: 425px;
+}
+
+input.text.beta_key {
+  width: 425px;
+}
+
+input.button {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+table.list {
+  margin: 0 0 10px 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.list thead td,
+table.list tfoot td {
+  padding: 0;
+}
+
+table.list td, table.list th {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+table.list tbody td {
+  border-bottom: 1px solid #eee;
+/*  border-top: 1px solid #eee;*/
+  line-height: 1.3;
+}
+
+table.list th {
+  font-weight: bold;
+  background-color: #eee;
+  white-space: nowrap;
+}
+
+table.list th.instructor_name,
+table.list td.instructor_name {
+  white-space: nowrap;
+}
+
+table.list th.courses_count,
+table.list td.courses_count,
+table.list th.status, 
+table.list td.status, 
+table.list th.open_seats, 
+table.list th.total_seats, 
+table.list th.sections_count, 
+table.list td.open_seats, 
+table.list td.total_seats, 
+table.list td.sections_count, 
+table.list td.call_number,
+table.list th.call_number {
+  vertical-align: middle;
+  text-align: center;
+  width: 100px;
+}
+
+table.list td.term_name {
+  white-space: nowrap;
+}
+
+table.list th.section_name, 
+table.list th.section_name,
+table.list th.course_name,
+table.list td.course_name {
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+table.list thead td p {
+  color: #666;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+table.list thead td form.filter input,
+table.list thead td form.filter select {
+  font-size: 11px;
+} 
+
+table.list td.instructor_name,
+table.list td.course_name {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+table.list td.instructor_name p,
+table.list td.course_name p {
+  line-height: 1.0;
+  margin: 5px 0 0 0;
+  font-size: 11px;
+  color: #666;
+  font-weight: normal;
+}
+
+table.list td.instructor_name p a,
+table.list td.course_name p a {
+  color: #666;
+  font-weight: normal;
+}
+
+table.list td.vote, table.list td.subscribe {
+  width: 16px;
+}
+
+table.list table tbody td,
+table.list table tbody th,
+table.list table {
+  border-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+table.form th label {
+  font-size: 18px;
+}
+
+table.form {
+  width: auto;
+  margin-bottom: 10px;
+}
+
+table.form th,
+table.form td {
+  padding: 0 0 20px 0;
+}
+
+table.form td.submit {
+  padding-bottom: 0;
+}
+
+table.form th {
+  text-align: right;
+  padding-right: 10px;
+}
+
+table.form td {
+  text-align: left;
+}
+
+table.form select {
+  margin: 0;
+  padding: 7px;
+  border: 1px solid #ccc;
+  width: 100px;
+  font-size: 18px;
+  color: #666;
+}
+
+table.form {
+  margin: 20px 0;
+}
+
+div#errorExplanation {
+  width: 500px;
+  margin: 0 0 20px 0;
+  border: 3px solid #ccc;
+  background-color: #eee;
+  padding: 20px;
+}
+
+div#errorExplanation h2 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  line-height: 1.0;
+}
+
+div#errorExplanation p {
+  margin: 0;
+  line-height: 1.0;
+  color: #666;
+}
+
+div#errorExplanation li {
+  padding-left: 2.0em;
+  line-height: 1.5;
+  font-weight: bold;
+  margin-top: 1.0em;
+}
+
+div.fieldWithErrors {
+  display: inline;
+}
+
+div.fieldWithErrors input.text,
+div.fieldWithErrors input.textarea {
+  border: 1px solid #c30;
+}
+
+div.page_info {
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  margin: 20px 0 0 0;
+}
+
+div.page_info p {
+  line-height: 1.4;
+  margin: 0 0 3px 0;
+  padding: 0;
+  color: #999;
+}
+
+div.page_info h3 {
+  margin: 0 0 0 0;
+  padding: 0;
+  line-height: 1.0;
+}
+
+div.page_info td h2 {
+  margin: 0;
+}
+
+div.page_title {
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  margin: 20px 0 20px 0;
+}
+
+div.page_title p {
+  line-height: 1.4;
+  margin: 0 0 3px 0;
+  padding: 0;
+  color: #999;
+}
+
+div.page_title h2 {
+  margin: 0 0 0 0;
+  padding: 0;
+  line-height: 1.0;
+}
+
+div.page_title td h2 {
+  margin: 0;
+}
+
+div.page_title table {
+  margin-bottom: 5px;
+}
+
+div.page_title table td {
+  padding: 0;
+  margin: 0;
+}
+
+div.page_title .points,
+div.page_title .comments {
+  font-size: 10px;
+}
+
+div.page_title table td.vote {
+  vertical-align: top;
+  width: 16px;
+  padding-right: 3px;
+}
+
+div.page_title table td {
+  vertical-align: middle;
+}
+
+a.like, a.dislike,
+a.liked, a.disliked {
+  display: block;
+  width: 16px;
+  height: 16px;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+}
+
+a.like {
+  background-image: url(../images/icons/arrow_up_grey.gif);
+}
+
+a.dislike {
+  background-image: url(../images/icons/arrow_down_grey.gif);
+}
+
+a.liked {
+  background-image: url(../images/icons/arrow_up.gif);
+}
+
+a.disliked {
+  background-image: url(../images/icons/arrow_down.gif);
+}
+
+table.list td.vote {
+  padding: 0 3px 0 0;
+}
+
+.subscribe a {
+  display: block;
+  width: 16px;
+  height: 16px;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+}
+
+.subscribe a.subscribe {
+  background-image: url(../images/icons/tick_grey.png);
+}
+
+.subscribe a.unsubscribe {
+  background-image: url(../images/icons/tick.png);
+}
+
+form.comment_form {
+  margin-bottom: 20px;
+}
+
+div.comments {
+  margin-bottom: 20px;
+}
+
+div.comments h3 {
+  line-height: 1.5;
+}
+
+div.comments ul {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+ul.comments li {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+ul.comments li div.info {
+  font-size: 10px;
+}
+
+ul.comments li span.author {
+  font-weight: bold;
+}
+
+div#textile ul {
+  list-style-position: outside;
+  margin-bottom: 1.0em;
+}
+
+div#textile li {
+  margin-left: 2.0em;
+  line-height: 1.6;
+  list-style-type: disc;
+}
+
+div#textile li li {
+  list-style-type: square;
+}
+
+div#textile p {
+  line-height: 1.6;
+  margin: 1.0em 0;
+}
+
+div#textile h2 {
+  margin: 0 0 1.0em 0;
+}
+
+div#textile h3 {
+  margin: 1.0em 0 0.5em 0;
+}
+
+div#textile hr {
+  margin-bottom: 1.5em;
+}
+
+div.filter_links a {
+  display: block;
+  float: left;
+  padding: 2px 5px;
+  text-decoration: none;
+  line-height: 2.0;
+  margin: 0 5px 0 0;
+  background-color: #f60;
+  border: 2px solid #f60;
+  color: #fff;
+}
+
+div.filter_links a.selected {
+  border: 2px solid #eee;
+  background-color: #eee;
+  color: #333;
+}
+
+div.pagination {
+  line-height: 2.0;
+  margin: 5px 0;
+}
+
+div.pagination span.gap {
+  border: none;
+  background-color: transparent;
+}
+
+div.pagination a,
+div.pagination span {
+  border: 1px solid #ccc;
+  background-color: #eee;
+  padding: 3px 7px;
+  color: #666;
+}
+
+div.pagination a,
+div.pagination a:hover {
+  text-decoration: none;
+}
+
+div.pagination .disabled {
+  font-weight: bold;
+  color: #666;
+  border: none;
+  background-color: transparent;
+}
+
+div.pagination .current {
+  border-color: #f60;
+  background-color: #f60;
+  color: #fff;
+}
+
+div.pagination .next_page,
+div.pagination .prev_page {
+  border: none;
+  background-color: transparent;
+}
+
+div.pagination .disabled.prev_page,
+div.pagination .disabled.next_page {
+  display: none;
+}
+
+div.block h2 {
+  font-size: 44px;
+  line-height: 1.0;
+  margin: 0 0 10px 0;
+}
+
+div.block.summary h2 {
+  margin: 0; /* kind of a hack until later */
+}
+
+div.block h3 {
+  line-height: 1.0;
+  margin: 0 0 10px 0;
+}
+
+div.block p {
+  line-height: 2.0;
+  margin: 0;
+  padding: 0;
+}
+
+div.block {
+  margin-bottom: 2.0em;
+}
+
+div.block a.tag {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  line-height: 2.5;
+  padding: 3px 4px;
+  text-decoration: none;
+  color: #fff;
+  white-space: nowrap;
+  color: #333;
+}
+
+div.block a.tag:hover {
+  border: 1px solid #f60;
+  text-decoration: none;
+  background-color: #f60;
+  color: #fff;
+}
+
+ul.subjects {
+  margin-bottom: 10px;
+  float: left;
+}
+
+ul.subjects li {
+  float: left;
+  padding-right: 10px;
+  font-weight: bold;
+  white-space: nowrap;
+  width: 7em;
+}
+
+ul.subjects a {
+  border: 1px solid #ccc;
+  background-color: #eee;
+  line-height: 2.5;
+  padding: 3px 4px;
+  text-decoration: none;
+  color: #fff;
+  white-space: nowrap;
+  color: #333; 
+}
+
+ul.subjects a:hover {
+  border: 1px solid #f60;
+  text-decoration: none;
+  background-color: #f60;
+  color: #fff; 
+}
+
+div#header form {
+  display: inline;
+}
+
+div#header form input {
+  margin: 10px 0 0 20px;
+  padding: 3px 3px 3px 23px;
+  border: 1px solid #ccc;
+  font-size: 10px;
+  color: #666;
+  width: 150px;
+  background-image: url(../images/icons/magnifier.png);
+  background-position: 3px center;
+  background-repeat: no-repeat;
+}
+
+form.home_search {
+  margin: 20px 0 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+form.home_search input.text {
+  width: 300px;
+}
+
+form.home_search table {
+  width: 100%;
+}
+
+form.home_search legend {
+  display: none;
+}
+
+table.hot {
+  width: 100%;
+}
+
+table.hot td {
+  width: 50%;
+}
+
+div.hot {
+  padding: 0 20px 0 0;
+  margin: 20px 0;
+}
+
+div.hot.courses {
+  border-right: 1px solid #eee;
+}
+
+div.hot.instructors {
+  margin-left: 20px;
+}
+
+div.hot p {
+  line-height: 1.0;
+  font-size: 10px;
+  margin: 3px 0 0 0;
+  color: #666;
+}
+
+div.hot h2 {
+  margin: 0 0 10px 0;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #eee;
+}
+
+div.hot ul {
+  
+}
+
+div.hot li {
+  line-height: 1.6;
+  padding-bottom: 10px;
+}
+
+.clear {
+  clear: both;
+}
+
+.fortune {
+  color: #666;
+  margin-top: 10px;
+  line-height: 1.8;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+#home {
+  text-align: center;
+  padding: 50px;
+}
+
+#home h1, #home h2 {
+  margin-bottom: 1.0em;
+  color: #333;
+}
+
+#home p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 2.0em;
+}

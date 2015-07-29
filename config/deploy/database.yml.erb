@@ -1,0 +1,7 @@
+production:
+  adapter: postgresql 
+  database: sissed_production
+  host: localhost
+  username: chris
+  password: <%= "#{Capistrano::CLI.ui.ask('Database Password: ')}" %>
+  encoding: utf8

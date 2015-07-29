@@ -1,0 +1,23 @@
+development:
+  adapter: mysql
+  database: b3b0p_development
+  host: localhost
+  username: user
+  password: password
+  encoding: utf8
+  
+test:
+  adapter: mysql
+  database: b3b0p_test
+  host: localhost
+  username: user
+  password: password
+  encoding: utf8
+  
+production:
+  adapter: mysql
+  database: b3b0p_production
+  host: localhost
+  username: user
+  password: password
+  encoding: utf8

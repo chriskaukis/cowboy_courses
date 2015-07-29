@@ -1,0 +1,38 @@
+<% title 'signup' %>
+
+<% content_for :stylesheets do %>
+  <link rel="stylesheet" href="/stylesheets/openid.css" type="text/css" charset="utf-8">
+<% end %>
+
+<% content_for :javascripts do %>
+  <script src="/javascripts/openid-jquery.js" type="text/javascript" charset="utf-8"></script>
+<% end %>
+
+<div class="page_title">
+  <h2>Create an Account</h2>
+</div>
+
+<% form_for @user, :url => signup_path, :html => { :id => 'openid_form' } do |f| %>
+	<fieldset>
+  	<input type="hidden" name="action" value="verify" />
+
+	  <%= f.error_messages %>
+  		
+		<div id="openid_choice">
+  		<p>Please click your account provider:</p>
+  		<div id="openid_btns"></div>
+		</div>
+		
+		<div id="openid_input_area">
+			<%= f.text_field :identity_url, :value => 'http://', :name => 'openid_identifier', :id => 'openid_identifier' %>
+			<%= f.submit 'Create Account', :id => 'openid_submit' %>
+		</div>
+		<noscript>
+			<p>
+  			OpenID is service that allows you to log-on to many different websites using a single indentity.
+  			Find out <a title="More about OpenID" href="http://openid.net/what/">more about OpenID</a> 
+  			and <a title="Get an OpenID" href="http://openid.net/get/">how to get an OpenID enabled account</a>.
+  		</p>
+		</noscript>
+	</fieldset>
+<% end %>

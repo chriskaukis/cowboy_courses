@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>sissed<%= yield :title %></title>
+  <link rel="stylesheet" href="/stylesheets/base.css" type="text/css" charset="utf-8">
+  <%= yield :stylesheets %>
+</head>
+<body>
+  <div id="header">
+    <h1><%= link_to 'sissed', root_path, :title => 'sissed' %></h1>
+    
+    <% if logged_in? %>
+    <div id="main_menu">
+      <%= link_to 'courses', courses_path, :title => 'courses' %> |
+      <%= link_to 'instructors', instructors_path, :title => 'instructors' %> |
+      <%= link_to 'subjects', subjects_path, :title => 'subjects' %> |
+      <%= link_to 'help', help_path, :title => 'are you in trouble?' %>
+    </div>
+    
+    <div id="logged_in_menu">
+      <%= link_to 'my account', account_path, :title => 'my account' %> |
+      <%= link_to 'subscriptions', subscriptions_path, :title => 'subscriptions' %> |
+      <%= link_to 'logout', logout_path, :title => 'logout' %>
+    </div>
+  
+    <% else %>
+    <div id="login_menu">
+      <%= link_to 'login', login_path, :title => 'login' %>
+    </div>
+    <% end %>
+  </div>
+  
+  <% if flash[:notice] %>
+  <div id="flash_notice">
+    <p><%= flash[:notice] %></p>
+  </div>
+  <% end %>
+  
+  <div id="content">
+    <table id="layout">
+      <tr>
+        <%= yield :left %>
+        <td id="main">
+          <%= yield %>
+        </td>
+        <%= yield :right %>
+      </tr>
+    </table>
+  </div>
+    
+  <div id="footer">
+    Copyright &copy; 2009 <%= link_to 'Some Dood', 'http://b3b0p.com', :title => 'The superior way to say dude.' %>
+  </div>
+  
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script src="/javascripts/application.js" type="text/javascript" charset="utf-8"></script>
+  <%= yield :javascripts %>
+</body>
+</html>

@@ -1,0 +1,101 @@
+--- !ruby/object:Gem::Specification
+name: mechanize
+version: !ruby/object:Gem::Version
+  version: 0.9.3
+  prerelease: 
+platform: ruby
+authors:
+- Aaron Patterson
+- Mike Dalessio
+autorequire: 
+bindir: bin
+cert_chain: []
+date: 2009-06-08 00:00:00.000000000 Z
+dependencies:
+- !ruby/object:Gem::Dependency
+  name: nokogiri
+  requirement: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ! '>='
+      - !ruby/object:Gem::Version
+        version: 1.2.1
+  type: :runtime
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ! '>='
+      - !ruby/object:Gem::Version
+        version: 1.2.1
+- !ruby/object:Gem::Dependency
+  name: hoe
+  requirement: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ! '>='
+      - !ruby/object:Gem::Version
+        version: 1.12.2
+  type: :development
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ! '>='
+      - !ruby/object:Gem::Version
+        version: 1.12.2
+description: ! "The Mechanize library is used for automating interaction with websites.
+  \nMechanize automatically stores and sends cookies, follows redirects,\ncan follow
+  links, and submit forms.  Form fields can be populated and\nsubmitted.  Mechanize
+  also keeps track of the sites that you have visited as\na history."
+email:
+- aaronp@rubyforge.org
+- mike.dalessio@gmail.com
+executables: []
+extensions: []
+extra_rdoc_files:
+- Manifest.txt
+- CHANGELOG.rdoc
+- EXAMPLES.rdoc
+- FAQ.rdoc
+- GUIDE.rdoc
+- LICENSE.rdoc
+- README.rdoc
+files:
+- Manifest.txt
+- CHANGELOG.rdoc
+- EXAMPLES.rdoc
+- FAQ.rdoc
+- GUIDE.rdoc
+- LICENSE.rdoc
+- README.rdoc
+homepage: http://mechanize.rubyforge.org/
+licenses: []
+post_install_message: 
+rdoc_options:
+- --main
+- README.rdoc
+require_paths:
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement
+  none: false
+  requirements:
+  - - ! '>='
+    - !ruby/object:Gem::Version
+      version: '0'
+      segments:
+      - 0
+      hash: 960619664965354100
+required_rubygems_version: !ruby/object:Gem::Requirement
+  none: false
+  requirements:
+  - - ! '>='
+    - !ruby/object:Gem::Version
+      version: '0'
+requirements: []
+rubyforge_project: mechanize
+rubygems_version: 1.8.24
+signing_key: 
+specification_version: 3
+summary: Mechanize provides automated web-browsing
+test_files: []

@@ -1,0 +1,221 @@
+--- !ruby/object:Gem::Specification
+name: pg
+version: !ruby/object:Gem::Version
+  version: 0.14.1
+  prerelease: 
+platform: ruby
+authors:
+- Michael Granger
+autorequire: 
+bindir: bin
+cert_chain:
+- ! '-----BEGIN CERTIFICATE-----
+
+  MIIDLDCCAhSgAwIBAgIBADANBgkqhkiG9w0BAQUFADA8MQwwCgYDVQQDDANnZWQx
+
+  FzAVBgoJkiaJk/IsZAEZFgdfYWVyaWVfMRMwEQYKCZImiZPyLGQBGRYDb3JnMB4X
+
+  DTEwMDkxNjE0NDg1MVoXDTExMDkxNjE0NDg1MVowPDEMMAoGA1UEAwwDZ2VkMRcw
+
+  FQYKCZImiZPyLGQBGRYHX2FlcmllXzETMBEGCgmSJomT8ixkARkWA29yZzCCASIw
+
+  DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALy//BFxC1f/cPSnwtJBWoFiFrir
+
+  h7RicI+joq/ocVXQqI4TDWPyF/8tqkvt+rD99X9qs2YeR8CU/YiIpLWrQOYST70J
+
+  vDn7Uvhb2muFVqq6+vobeTkILBEO6pionWDG8jSbo3qKm1RjKJDwg9p4wNKhPuu8
+
+  KGue/BFb67KflqyApPmPeb3Vdd9clspzqeFqp7cUBMEpFS6LWxy4Gk+qvFFJBJLB
+
+  BUHE/LZVJMVzfpC5Uq+QmY7B+FH/QqNndn3tOHgsPadLTNimuB1sCuL1a4z3Pepd
+
+  TeLBEFmEao5Dk3K/Q8o8vlbIB/jBDTUx6Djbgxw77909x6gI9doU4LD5XMcCAwEA
+
+  AaM5MDcwCQYDVR0TBAIwADALBgNVHQ8EBAMCBLAwHQYDVR0OBBYEFJeoGkOr9l4B
+
+  +saMkW/ZXT4UeSvVMA0GCSqGSIb3DQEBBQUAA4IBAQBG2KObvYI2eHyyBUJSJ3jN
+
+  vEnU3d60znAXbrSd2qb3r1lY1EPDD3bcy0MggCfGdg3Xu54z21oqyIdk8uGtWBPL
+
+  HIa9EgfFGSUEgvcIvaYqiN4jTUtidfEFw+Ltjs8AP9gWgSIYS6Gr38V0WGFFNzIH
+
+  aOD2wmu9oo/RffW4hS/8GuvfMzcw7CQ355wFR4KB/nyze+EsZ1Y5DerCAagMVuDQ
+
+  U0BLmWDFzPGGWlPeQCrYHCr+AcJz+NRnaHCKLZdSKj/RHuTOt+gblRex8FAh8NeA
+
+  cmlhXe46pZNJgWKbxZah85jIjx95hR8vOI+NAM5iH9kOqK13DrxacTKPhqj5PjwF
+
+  -----END CERTIFICATE-----
+
+'
+date: 2012-09-02 00:00:00.000000000 Z
+dependencies:
+- !ruby/object:Gem::Dependency
+  name: hoe-mercurial
+  requirement: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ~>
+      - !ruby/object:Gem::Version
+        version: 1.4.0
+  type: :development
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ~>
+      - !ruby/object:Gem::Version
+        version: 1.4.0
+- !ruby/object:Gem::Dependency
+  name: hoe-highline
+  requirement: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ~>
+      - !ruby/object:Gem::Version
+        version: 0.1.0
+  type: :development
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ~>
+      - !ruby/object:Gem::Version
+        version: 0.1.0
+- !ruby/object:Gem::Dependency
+  name: rdoc
+  requirement: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ~>
+      - !ruby/object:Gem::Version
+        version: '3.10'
+  type: :development
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ~>
+      - !ruby/object:Gem::Version
+        version: '3.10'
+- !ruby/object:Gem::Dependency
+  name: rake-compiler
+  requirement: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ~>
+      - !ruby/object:Gem::Version
+        version: '0.7'
+  type: :development
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ~>
+      - !ruby/object:Gem::Version
+        version: '0.7'
+- !ruby/object:Gem::Dependency
+  name: hoe-deveiate
+  requirement: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ~>
+      - !ruby/object:Gem::Version
+        version: '0.1'
+  type: :development
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ~>
+      - !ruby/object:Gem::Version
+        version: '0.1'
+- !ruby/object:Gem::Dependency
+  name: hoe
+  requirement: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ~>
+      - !ruby/object:Gem::Version
+        version: '3.0'
+  type: :development
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ~>
+      - !ruby/object:Gem::Version
+        version: '3.0'
+description: ! "Pg is the Ruby interface to the {PostgreSQL RDBMS}[http://www.postgresql.org/].\n\nIt
+  works with {PostgreSQL 8.3 and later}[http://bit.ly/6AfPhm].\n\nA small example
+  usage:\n\n  #!/usr/bin/env ruby\n  \n  require 'pg'\n  \n  # Output a table of current
+  connections to the DB\n  conn = PG.connect( dbname: 'sales' )\n  conn.exec( \"SELECT
+  * FROM pg_stat_activity\" ) do |result|\n    puts \"     PID | User             |
+  Query\"\n\tresult.each do |row|\n      puts \" %7d | %-16s | %s \" %\n        row.values_at('procpid',
+  'usename', 'current_query')\n    end\n  end"
+email:
+- ged@FaerieMUD.org
+executables: []
+extensions:
+- ext/extconf.rb
+extra_rdoc_files:
+- Contributors.rdoc
+- History.rdoc
+- Manifest.txt
+- README-OS_X.rdoc
+- README-Windows.rdoc
+- README.ja.rdoc
+- README.rdoc
+- POSTGRES
+- LICENSE
+- ext/pg.c
+- ext/pg_connection.c
+- ext/pg_result.c
+files:
+- Contributors.rdoc
+- History.rdoc
+- Manifest.txt
+- README-OS_X.rdoc
+- README-Windows.rdoc
+- README.ja.rdoc
+- README.rdoc
+- POSTGRES
+- LICENSE
+- ext/pg.c
+- ext/pg_connection.c
+- ext/pg_result.c
+- ext/extconf.rb
+homepage: https://bitbucket.org/ged/ruby-pg
+licenses:
+- BSD
+- Ruby
+- GPL
+post_install_message: 
+rdoc_options:
+- -f
+- fivefish
+- -t
+- ! 'pg: The Ruby Interface to PostgreSQL'
+- -m
+- README.rdoc
+require_paths:
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement
+  none: false
+  requirements:
+  - - ! '>='
+    - !ruby/object:Gem::Version
+      version: 1.8.7
+required_rubygems_version: !ruby/object:Gem::Requirement
+  none: false
+  requirements:
+  - - ! '>='
+    - !ruby/object:Gem::Version
+      version: '0'
+requirements: []
+rubyforge_project: pg
+rubygems_version: 1.8.24
+signing_key: 
+specification_version: 3
+summary: Pg is the Ruby interface to the {PostgreSQL RDBMS}[http://www.postgresql.org/]
+test_files: []

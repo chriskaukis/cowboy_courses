@@ -1,0 +1,57 @@
+--- !ruby/object:Gem::Specification
+name: chronic
+version: !ruby/object:Gem::Version
+  version: 0.6.7
+  prerelease: 
+platform: ruby
+authors:
+- Tom Preston-Werner
+- Lee Jarvis
+autorequire: 
+bindir: bin
+cert_chain: []
+date: 2012-02-01 00:00:00.000000000 Z
+dependencies: []
+description: Chronic is a natural language date/time parser written in pure Ruby.
+email:
+- tom@mojombo.com
+- lee@jarvis.co
+executables: []
+extensions: []
+extra_rdoc_files:
+- README.md
+- HISTORY.md
+- LICENSE
+files:
+- README.md
+- HISTORY.md
+- LICENSE
+homepage: http://github.com/mojombo/chronic
+licenses: []
+post_install_message: 
+rdoc_options:
+- --charset=UTF-8
+require_paths:
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement
+  none: false
+  requirements:
+  - - ! '>='
+    - !ruby/object:Gem::Version
+      version: '0'
+      segments:
+      - 0
+      hash: 960619664965354100
+required_rubygems_version: !ruby/object:Gem::Requirement
+  none: false
+  requirements:
+  - - ! '>='
+    - !ruby/object:Gem::Version
+      version: '0'
+requirements: []
+rubyforge_project: chronic
+rubygems_version: 1.8.24
+signing_key: 
+specification_version: 3
+summary: Natural language date/time parsing.
+test_files: []

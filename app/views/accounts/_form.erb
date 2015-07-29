@@ -1,0 +1,38 @@
+<tr>
+  <th><%= form.label :name, 'Name:' %></th>
+  <td><%= form.text_field :name, :class => 'text name' %></td>
+</tr>
+<tr>
+  <th><%= form.label :email, 'Email:' %></th>
+  <td>
+    <%= form.text_field :email, :class => 'text email' %>
+    <p>
+      <%= form.check_box :email_notification, :class => 'checkbox' %>
+      <%= form.label :email_notification, 'Turn on email notifications (email is required)' %>
+    </p>
+  </td>
+</tr>
+<tr>
+  <th><%= form.label :formatted_phone, 'Phone:' %></th>
+  <td>
+    <%= form.text_field :formatted_phone, :class => 'text' %>
+    <%= form.select :carrier, carrier_choices_for_select, { :include_blank => true }, { :class => 'select' } %>
+    <p>
+      <%= form.check_box :sms_notification, :class => 'checkbox' %>
+      <%= form.label :sms_notification, 'Turn on SMS notifications (phone and carrier is required)' %>
+    </p>
+  </td>
+</tr>
+<tr>
+  <th><%= form.label :status_notification, 'Notifications:' %></th>
+  <td>
+    <p>
+      <%= form.check_box :status_notification, :class => 'checkbox' %>
+      <%= form.label :status_notification, 'Notify when status changes' %>
+    </p>
+    <p>
+      <%= form.check_box :instructor_notification, :class => 'checkbox' %>
+      <%= form.label :instructor_notification, 'Notify when instructor changes' %>
+    </p>
+  </td>
+</tr>

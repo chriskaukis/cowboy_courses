@@ -1,0 +1,45 @@
+<div class="fortune">
+  <pre><%=h `fortune` %></pre>
+</div>
+
+<table class="hot"><tr><td>
+<div class="hot courses">
+  <h2>top <%= @courses.size %> courses</h2>
+  <ul>
+    <% @courses.each_with_index do |course, index| %>
+      <li>
+        <span class="index"><%= index + 1 %>.</span>
+        <%= link_to course.name, course_path(course), :title => course.name %>
+        <p>
+          <span class="score">
+            <%= pluralize(course.score, 'point', 'points') %>
+          </span> |
+          <span class="comments">
+            <%= link_to pluralize(course.comments.size, 'comment', 'comments'), url_for(params.merge(:anchor => 'comments')), :title => pluralize(course.comments.size, 'comment', 'comments') %>
+          </span>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+</td><td>
+<div class="hot instructors">
+  <h2>top <%= @courses.size %> instructors</h2>
+  <ul>
+    <% @instructors.each_with_index do |instructor, index| %>
+      <li>
+        <span class="index"><%= index + 1 %>.</span>
+        <%= link_to instructor.name, instructor_path(instructor), :title => instructor.name %>
+        <p>
+          <span class="score">
+            <%= pluralize(instructor.score, 'point', 'points') %>
+          </span> |
+          <span class="comments">
+            <%= link_to pluralize(instructor.comments.size, 'comment', 'comments'), url_for(params.merge(:anchor => 'comments')), :title => pluralize(instructor.comments.size, 'comment', 'comments') %>
+          </span>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+</td></tr></table>

@@ -1,0 +1,58 @@
+--- !ruby/object:Gem::Specification
+name: ruby-openid
+version: !ruby/object:Gem::Version
+  version: 2.2.1
+  prerelease: 
+platform: ruby
+authors:
+- JanRain, Inc
+autorequire: openid
+bindir: bin
+cert_chain: []
+date: 2012-09-27 00:00:00.000000000 Z
+dependencies: []
+description: 
+email: openid@janrain.com
+executables: []
+extensions: []
+extra_rdoc_files:
+- README.md
+- INSTALL.md
+- LICENSE
+- UPGRADE.md
+files:
+- README.md
+- INSTALL.md
+- LICENSE
+- UPGRADE.md
+homepage: https://github.com/openid/ruby-openid
+licenses:
+- Apache Software License
+post_install_message: 
+rdoc_options:
+- --main
+- README.md
+require_paths:
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement
+  none: false
+  requirements:
+  - - ! '>='
+    - !ruby/object:Gem::Version
+      version: '0'
+      segments:
+      - 0
+      hash: 960619664965354100
+required_rubygems_version: !ruby/object:Gem::Requirement
+  none: false
+  requirements:
+  - - ! '>='
+    - !ruby/object:Gem::Version
+      version: '0'
+requirements: []
+rubyforge_project: 
+rubygems_version: 1.8.24
+signing_key: 
+specification_version: 3
+summary: A library for consuming and serving OpenID identities.
+test_files: []

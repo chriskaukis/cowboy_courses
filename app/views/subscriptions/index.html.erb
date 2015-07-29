@@ -1,0 +1,79 @@
+<% title 'subscriptions' %>
+
+<% content_for :right do %>
+
+  <td id="right">
+    <div class="block summary">
+      <h2><%= @subscriptions.size %></h2>
+      <p><%= @subscriptions.size == 1 ? 'subscription' : 'subscriptions' %> for the</p>
+      <p><%= link_to @term.name, subscriptions_path(:term_id => @term), :title => @term.name, :class => 'tag' %></p>
+      <p>term</p>
+    </div>
+    
+    <div class="block" id="subscriptions_terms_block">
+      <h3>Terms</h3>
+      <% @terms.each do |term| %>
+        <%= link_to term.name, subscriptions_path(:term_id => term), :title => term.name, :class => 'tag' %>
+      <% end %>
+    </div>
+
+    <% if @subjects.size > 0 %>
+    <div class="block" id="subscriptions_subjects_block">
+      <h3>Subjects</h3>
+      <% @subjects.each do |subject| %>
+        <%= link_to subject.identifier, subject_path(subject), :title => subject.name, :class => 'tag' %>
+      <% end %>
+    </div>
+    <% end %>
+    
+    <% if @courses.size > 0 %>
+    <div class="block" id="subscriptions_courses_block">
+      <h3>Courses</h3>
+      <% @courses.each do |course| %>
+        <%= link_to course.identifier, course_path(course), :title => course.name, :class => 'tag' %>
+      <% end %>
+    </div>
+    <% end %>
+
+    <% if @instructors.size > 0 %>
+    <div class="block" id="subscriptions_instructors_block">
+      <h3>Instructors</h3>
+      <% @instructors.each do |instructor| %>
+        <%= link_to instructor.name, instructor_path(instructor), :title => instructor.name, :class => 'tag' %>
+      <% end %>
+    </div>
+    <% end %>
+  </td>
+
+<% end %>
+
+<div class="page_title">
+  <h2>Subscriptions</h2>
+</div>
+
+<table class="list">
+  <thead>
+    <tr>      
+      <th class="unsubscribe"></th>
+      <th class="section_name">Section Name</th>
+      <th class="course_name">Course Name</th>
+      <th class="call_number">Call Number</th>
+      <th class="term_name">Term</th>
+      <th class="instructor_name">Instructor</th>
+      <th class="status">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @subscriptions.size > 0 %>
+      <% @subscriptions.each do |subscription| %>
+        <%= render :partial => 'subscriptions/subscription', :locals => { :subscription => subscription } %>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="8">
+          <p>You currently have no subscriptions.</p>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

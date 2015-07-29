@@ -1,0 +1,82 @@
+<% title 'instructors' %>
+
+<% content_for :right do %>
+  <td id="right">
+    <div class="block summary" id="instructors_count_block">
+      <h2><%= number_with_delimiter(@instructors.total_entries) %></h2>
+      <p>instructors teaching in the</p>
+      <p><%= link_to @term.name, instructors_path(:term_id => @term), :title => @term.name, :class => 'tag' %></p>
+      <p>term</p>
+    </div>
+
+    <div class="block" id="subscriptions_terms_block">
+      <h3>Active Terms</h3>
+      <% @terms.each do |term| %>
+        <%= link_to term.name, instructors_path(:term_id => term), :title => term.name, :class => 'tag' %>
+      <% end %>
+    </div>
+  </td>
+<% end %>
+
+<div class="page_title">
+  <h2>Instructors</h2>
+  <p>The hottest instructors (not visually of course).</p>
+</div>
+
+<table class="list instructors">
+  <thead>
+    <% if @instructors.total_pages > 1 %>
+    <tr>
+      <td colspan="3"><%= will_paginate @instructors %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <th class="vote"></th>
+      <th class="instructor_name">Name</th>
+      <th class="sections_count">Sections</th>
+    </tr>
+  </thead>
+  <% if @instructors.length > 0 %>
+
+    <% if @instructors.total_pages > 1 %>
+    <tfoot>
+      <tr>
+        <td colspan="3"><%= will_paginate @instructors %></td>
+      </tr>
+    </tfoot>
+    <% end %>
+
+  <tbody>
+    <% @instructors.each do |instructor| %>
+    <tr>
+      <td class="vote">
+        <%= link_to 'like', instructor_up_path(instructor, :redirect_to => current_url), :title => 'up vote', :class => current_user.up_voted?(instructor) ? 'liked' : 'like' %>
+        <%= link_to 'dislike', instructor_down_path(instructor, :redirect_to => current_url), :title => 'down vote', :class => current_user.down_voted?(instructor) ? 'disliked' : 'dislike' %>
+      </td>
+      <td class="instructor_name">
+        <%= link_to instructor.name, instructor_path(instructor), :title => instructor.name  %>
+        <p>
+          <span class="points">
+            <%= pluralize(instructor.score, 'point', 'points') %>
+          </span> |
+          <span class="comments">
+            <%= link_to pluralize(instructor.comments.size, 'comment', 'comments'),
+              instructor_path(instructor, :anchor => 'comments'),
+              :title => pluralize(instructor.comments.size, 'comment', 'comments') %>
+          </span>
+        </p>
+      </td>
+      <td class="sections_count">
+        <%= instructor.sections_count %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+  <% else %>
+  <tbody>
+    <tr>
+      <td colspan="2"><p>No instructors found.</p></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>

@@ -1,0 +1,18 @@
+<% title 'your account' %>
+
+<div class="page_title"><h2>Your Account</h2></div>
+ 
+<% form_for @user, :url => account_path, :html => { :method => :put } do |f| %>
+  <fieldset>
+    <%= f.error_messages %>
+    <table class="form">
+      <%= render :partial => 'form', :object => f %>
+      <tr>
+        <td class="submit"></td>
+        <td class="submit">
+          <%= f.submit 'Update', :class => 'button' %>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+<% end %>

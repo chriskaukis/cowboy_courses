@@ -1,0 +1,28 @@
+<% title 'beta' %>
+
+<div class="page_title">
+  <h2>Beta</h2> 
+  <p>Input your beta key to create an account. Don't have a beta key? 
+  Find someone who does and ask them.
+  </p>
+</div>
+
+<% form_for @user, :url => beta_path do |f| %>
+  <fieldset>
+  <%= f.error_messages %>
+  <table class="form">
+    <tr>
+      <th>
+        <%= label_tag :beta_key, 'Beta Key:' %>
+      </th>
+      <td>
+        <%= text_field_tag :beta_key, '', :class => 'text beta_key' %>
+      </td>
+    </tr>
+    <tr>
+      <td class="submit"></td>
+      <td class="submit"><%= f.submit 'Submit', :class => 'button' %></td>
+    </tr>
+  </table>
+  </fieldset>
+<% end %>

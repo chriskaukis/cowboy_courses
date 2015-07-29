@@ -1,0 +1,60 @@
+--- !ruby/object:Gem::Specification
+name: mislav-will_paginate
+version: !ruby/object:Gem::Version
+  version: 2.3.11
+  prerelease: 
+platform: ruby
+authors:
+- ! "Mislav MarohniÄ\x87"
+- PJ Hyett
+autorequire: 
+bindir: bin
+cert_chain: []
+date: 2009-06-02 00:00:00.000000000 Z
+dependencies: []
+description: The will_paginate library provides a simple, yet powerful and extensible
+  API for ActiveRecord pagination and rendering of pagination links in ActionView
+  templates.
+email: mislav.marohnic@gmail.com
+executables: []
+extensions: []
+extra_rdoc_files:
+- README.rdoc
+- LICENSE
+- CHANGELOG.rdoc
+files:
+- README.rdoc
+- LICENSE
+- CHANGELOG.rdoc
+homepage: http://github.com/mislav/will_paginate/wikis
+licenses: []
+post_install_message: 
+rdoc_options:
+- --main
+- README.rdoc
+- --inline-source
+- --charset=UTF-8
+require_paths:
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement
+  none: false
+  requirements:
+  - - ! '>='
+    - !ruby/object:Gem::Version
+      version: '0'
+      segments:
+      - 0
+      hash: 960619664965354100
+required_rubygems_version: !ruby/object:Gem::Requirement
+  none: false
+  requirements:
+  - - ! '>='
+    - !ruby/object:Gem::Version
+      version: '0'
+requirements: []
+rubyforge_project: 
+rubygems_version: 1.8.24
+signing_key: 
+specification_version: 2
+summary: Most awesome pagination solution for Rails
+test_files: []

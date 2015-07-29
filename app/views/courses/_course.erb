@@ -1,0 +1,28 @@
+<tr id="course_<%= course.id %>">
+  <td class="vote">
+    <%= link_to 'like', course_up_path(course, :redirect_to => current_url), :title => 'up vote', :class => current_user.up_voted?(course) ? 'liked' : 'like' %>
+    <%= link_to 'dislike', course_down_path(course, :redirect_to => current_url), :title => 'down vote', :class => current_user.down_voted?(course) ? 'disliked' : 'dislike' %>
+  </td>
+  <td class="course_name" width="100%">
+    <%= link_to course.name, course_path(course), :title => course.name %>
+    <p>
+      <span class="points">
+        <%= pluralize(course.score, 'point', 'points') %>
+      </span> |
+      <span class="comments">
+        <%= link_to pluralize(course.comments.size, 'comment', 'comments'), 
+          course_path(course, :anchor => 'comments'), 
+          :title => pluralize(course.comments.size, 'comment', 'comments') %>
+      </span>
+    </p>
+  </td>
+  <td class="open_seats">
+    <%= course.open_seats || 'unknown' %>
+  </td>
+  <td class="total_seats">
+    <%= course.total_seats || 'unknown' %>
+  </td>
+  <td class="sections_count">
+    <%= course.sections_count || 'unknown' %>
+  </td>
+</tr>

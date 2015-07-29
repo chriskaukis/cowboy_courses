@@ -1,0 +1,26 @@
+<% title 'new comment' %>
+
+<div class="page_title">
+  <h2>
+    New Comment
+  </h2>
+  <p>
+    back to <%= link_to @commentable.name, url_for(@commentable), :title => @commentable.name %>
+  </p>
+</div>
+
+
+<% form_for :comment, :url => url_for([@commentable, @comment]), :html => { :id => 'new_comment_form', :class => 'comment_form new' } do |f| %>
+  <fieldset>
+    <%= f.error_messages %>
+    <table class="form">
+      <%= render :partial => 'comments/form', :locals => { :f  => f } %>
+      <tr>
+      <td class="submit">
+        <%= f.submit 'add comment', :class => 'button' %>
+        <%= link_to 'formatting help', 'http://redcloth.org/hobix.com/textile/quick.html', :popup => true, :title => 'formatting help', :class => 'formatting_help' %>
+      </td>
+      </tr>
+    </table>
+  </fieldset>
+<% end %>
