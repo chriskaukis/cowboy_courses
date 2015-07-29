@@ -28,7 +28,7 @@ computer as fast as possible to enroll in that course they wanted.
 
 The use case and where this is useful is when you are a freshmen
 or perhaps a senior needing a certain course to graduate that is 
-already full. There are other potential uses also. If you don't 
+already full. There are other potential uses also. If you don't want 
 a specific date/time or instructor is another example.
 
 ## Other
